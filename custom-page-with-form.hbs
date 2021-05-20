@@ -1,0 +1,30 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        {{#post}} 
+            {{> content no_image=true}}
+        {{/post}}
+        {{#is "post"}} <!-- tout ce qui est entre les "is" est tiré des autres types de page, le formulaire est pris depuis le thème Dawn -->
+            {{> related}}
+            {{> comment}}
+        {{/is}}
+        <form action="https://formspree.io/FORM_ID" class="contact-form container small" method="POST">
+            <label>
+                Nom:
+                <input type="text" name="name" champ obligatoire>
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email" champ obligatoire>
+            </label>
+            <label>
+                Message:
+                <textarea rows="6" name="message" champ obligatoire></textarea>
+            </label>
+            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            <input type="hidden" name="_next" value="{{@site.url}}/merci/">
+            <button class="button" type="submit">Envoyer</button>
+        </form>
+    </main>
+</div>

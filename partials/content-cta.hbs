@@ -1,0 +1,25 @@
+{{{html}}}
+
+{{#if access}}
+    {{#is "post"}}
+        {{#unless @member}}
+            <section class="single-cta">
+                <h2 class="single-cta-title">Ce contenu t'intéresse ? Abonne-toi pour être informé personnellement de la sortie des nouveaux articles. </h2>
+                <button class="button single-cta-button" data-portal="signup">S'abonner</button>
+                <br>
+                <button class="button-text single-cta-footer" data-portal="signin">Déjà membre? Se connecter</button>
+            </section>
+        {{/unless}}
+    {{/is}}
+{{else}}
+    <section class="single-cta">
+        {{#has visibility="paid"}}
+            <h2 class="single-cta-title">Ce contenu est réservé aux membres premium.</h2>
+        {{else}}
+            <h2 class="single-cta-title">Ce contenu est réservée aux membres.</h2>
+        {{/has}}
+        <button class="button single-cta-button" data-portal="signup">S'abonner</button>
+        <br>
+        <button class="button-text single-cta-footer" data-portal="signin">Déjà membre? Se connecter</button>
+    </section>
+{{/if}}
