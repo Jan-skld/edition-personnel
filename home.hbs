@@ -19,7 +19,9 @@
         {{> header}}
 
         <div class="site-content">
-            {{content}} <!-- ici, il y avait {{{body}}} -->
+            {{#page}} <!-- ici, il y avait {{{body}}} (voir default.hbs) -->
+                {{content}}
+            {{/page}}
         </div>
 
         {{> footer}}
