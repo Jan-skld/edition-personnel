@@ -19,9 +19,11 @@
         {{> header}}
 
         <div class="site-content">
-            {{#post}} <!-- ici, il y avait {{{body}}} (voir default.hbs) -->
-                {{content}}
-            {{/post}}
+            <main class="site-main">
+                {{#page}} <!-- ici, il y avait {{{body}}} (voir default.hbs) -->
+                    {{content}}
+                {{/page}}
+            </main>
         </div>
 
         {{> footer}}
